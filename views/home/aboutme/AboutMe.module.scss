@@ -1,0 +1,33 @@
+.container {
+  .sectionHeader {
+    .header {
+      .title {
+        font-size: 4rem;
+        font-weight: bold;
+        /* color gradient */
+        background: linear-gradient(
+          90deg,
+          #78c1f3 0%,
+          #9be8d8 25%,
+          #e2f6ca 75%,
+          #f8fdcf 100%
+        );
+        // wrap color to text
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      .jobTitle {
+        font-size: 2rem;
+        background: linear-gradient(90deg, #e74646 0%, #fff3e2 50%, #e74646 100%);
+        // wrap color to text
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

@@ -12,10 +12,6 @@ const Sidebar = (props: SidebarProps) => {
     <div className={styles.container}>
       <header className={styles.header}>
         <h1 className={styles.title}>Austin Howard</h1>
-        <h4 className={styles.subtitle}>
-          <span>Sr. Software Engineer</span>
-          <span>& Full Stack Developer</span>
-        </h4>
       </header>
       <div className={styles.profileImageContainer}>
         <Image
