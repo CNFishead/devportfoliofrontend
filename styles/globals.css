@@ -1,9 +1,30 @@
+:root{
+  --primary: #053B50;
+  --secondary: #176B87;
+  --tertiary: #64CCC5;
+  --quaternary: #e7e7e7;
+  --primary-light: #134255;
+  --secondary-light: #2a7188;
+  --tertiary-light: #7deee6;
+  --quaternary-light: #f5f5f5;
+  --primary-dark: #053B50;
+  --secondary-dark: #124f63;
+  --tertiary-dark: #5ab9b3;
+  --quaternary-dark: #cecdcd;
+  --tertiary-lighter: #b3f0ec;
+}
+
 html,
 body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color: #999999;
+  line-height: 1.7;
+  overflow-x: hidden;
+  height: 100%;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
