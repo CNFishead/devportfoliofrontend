@@ -5,12 +5,12 @@ import { FaHome } from 'react-icons/fa';
 const Home = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.sectionHeader}>
-        <p className={styles.sectionTitle}>
-          <FaHome className={styles.icon} /> Introduction
-        </p>
-      </div>
       <div className={styles.section}>
+        <div className={styles.sectionHeader}>
+          <p className={styles.sectionTitle} id="introduction">
+            <FaHome className={styles.icon} /> Introduction
+          </p>
+        </div>
         <h1 className={styles.title}>
           Hello, I am <span className={styles.name}>Austin Howard</span>
         </h1>
@@ -29,6 +29,11 @@ const Home = () => {
         </p>
       </div>
       <div className={styles.section}>
+        <div className={styles.sectionHeader}>
+          <p className={styles.sectionTitle} id="about">
+            <FaHome className={styles.icon} /> about
+          </p>
+        </div>
         <h1 className={styles.title}>
           Hello, I am <span className={styles.name}>Austin Howard</span>
         </h1>
