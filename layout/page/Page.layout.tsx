@@ -14,7 +14,9 @@ const Page = (props: PageProps) => {
         <video src="/videos/video3.mp4" autoPlay loop muted />
       </div>
       <div className={styles.container}>
-        <Sidebar />
+        <div className={styles.sidebarContainer}>
+          <Sidebar />
+        </div>
         <div className={styles.childrenContainer}>{props.children}</div>
       </div>
     </>
