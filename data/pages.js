@@ -22,14 +22,9 @@ export default [
     icon: <FaBriefcase />,
   },
   {
-    title: 'Skills',
-    url: '#skills',
+    title: 'Portfolio',
+    url: '#portfolio',
     icon: <BsColumnsGap />,
-  },
-  {
-    title: 'Services',
-    url: '#services',
-    icon: <BiServer />,
   },
   {
     title: 'Testimonials',
