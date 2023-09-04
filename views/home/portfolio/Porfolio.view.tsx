@@ -25,7 +25,10 @@ const Portfolio = () => {
             </div>
             <div className={styles.projectInfo}>
               <h2 className={styles.projectTitle}>{project.name}</h2>
-              <p className={styles.projectDescription}>{project.description}</p>
+              <p className={styles.projectDescription}>
+                {project.description.length > 300
+                  ? project.description.substring(0, 300) + '...'
+                  : project.description}</p>
               <div className={styles.projectLinks}>
                 {project.liveProjectUrl && (
                   <Button

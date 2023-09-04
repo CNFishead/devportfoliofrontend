@@ -26,11 +26,11 @@ export default [
     url: '#portfolio',
     icon: <BsColumnsGap />,
   },
-  {
-    title: 'Testimonials',
-    url: '#testimonials',
-    icon: <FaComment />,
-  },
+  // {
+  //   title: 'Testimonials',
+  //   url: '#testimonials',
+  //   icon: <FaComment />,
+  // },
   {
     title: 'Blog',
     url: '#blog',

@@ -1,10 +1,10 @@
 import Introduction from '@/views/home/introduction/Introduction.view';
-import { FaHome } from 'react-icons/fa';
+import { FaBlog, FaHome } from 'react-icons/fa';
 import styles from '../views/home/Home.module.scss';
 import { BsBriefcase, BsColumnsGap, BsGripVertical, BsPerson } from 'react-icons/bs';
 import AboutMe from '@/views/home/aboutme/AboutMe.view';
 import WorkHistory from '@/views/home/workHistory/WorkHistory.view';
-import { BiSolidShapes } from 'react-icons/bi';
+import Blog from '@/views/home/blog/Blog.view';
 import Portfolio from '@/views/home/portfolio/Porfolio.view';
 
 /**
@@ -47,6 +47,15 @@ export default [
     icon: <BsColumnsGap className={styles.icon} />,
     component: <Portfolio />,
     tooltip: 'About'
+  },
+  {
+    id: 5,
+    title: 'Blog Posts',
+    description: 'Blog posts that are featured on the homepage',
+    link: 'blog',
+    icon: <FaBlog className={styles.icon} />,
+    component: <Blog />,
+    tooltip: 'Blog'
   },
   // {
   //   id: 4,
