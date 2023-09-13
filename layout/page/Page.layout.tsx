@@ -23,6 +23,7 @@ const Page = (props: PageProps) => {
         <div className={styles.navigationPaneContainer}>
           <NavigationPane />
         </div>
+        {/*  */}
       </div>
     </>
   );

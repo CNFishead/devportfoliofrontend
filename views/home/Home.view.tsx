@@ -18,6 +18,7 @@ const Home = () => {
         type: 'spring',
         bounce: 0.4,
         duration: 0.8,
+        repeat: 0,
       },
     },
   };
@@ -34,7 +35,7 @@ const Home = () => {
               initial="offscreen"
               whileInView="onscreen"
               variants={cardVariants}
-              key={view.id}
+              key={view._id}
               id={view.link}
             >
               <div className={styles.sectionHeader}>

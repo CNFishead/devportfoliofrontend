@@ -6,6 +6,8 @@ import AboutMe from '@/views/home/aboutme/AboutMe.view';
 import WorkHistory from '@/views/home/workHistory/WorkHistory.view';
 import Blog from '@/views/home/blog/Blog.view';
 import Portfolio from '@/views/home/portfolio/Porfolio.view';
+import { IoIosMail } from 'react-icons/io';
+import ContactForm from '@/views/home/contact/ContactForm.view';
 
 /**
  * @description: Holds the json data for the views that go on the homepage
@@ -13,7 +15,7 @@ import Portfolio from '@/views/home/portfolio/Porfolio.view';
  */
 export default [
   {
-    id: 1,
+    _id: 1,
     title: 'Introduction',
     description: 'A brief introduction of the developer',
     link: 'introduction',
@@ -22,7 +24,7 @@ export default [
     tooltip: 'Introduction'
   },
   {
-    id: 2,
+    _id: 2,
     title: 'About Me',
     description: 'A brief description of the developer',
     link: 'aboutme',
@@ -31,7 +33,7 @@ export default [
     tooltip: 'About'
   },
   {
-    id: 3,
+    _id: 3,
     title: 'Work History',
     description: 'Developer work history',
     link: 'work-history',
@@ -40,7 +42,7 @@ export default [
     tooltip: 'About'
   },
   {
-    id: 4,
+    _id: 4,
     title: 'Portfolio',
     description: 'Developer portfolio',
     link: 'portfolio',
@@ -49,7 +51,7 @@ export default [
     tooltip: 'About'
   },
   {
-    id: 5,
+    _id: 5,
     title: 'Blog Posts',
     description: 'Blog posts that are featured on the homepage',
     link: 'blog',
@@ -57,13 +59,13 @@ export default [
     component: <Blog />,
     tooltip: 'Blog'
   },
-  // {
-  //   id: 4,
-  //   title: 'Skills',
-  //   description: 'Developer skills',
-  //   link: 'skills',
-  //   icon: <BiSolidShapes className={styles.icon} />,
-  //   component: <Skills />,
-  //   tooltip: 'Skills'
-  // },
+  {
+    _id: 6,
+    title: 'Contact Me',
+    description: 'Contact the developer',
+    link: 'contact',
+    icon: <IoIosMail className={styles.icon} />,
+    component: <ContactForm />,
+    tooltip: 'Contact'
+  },
 ];

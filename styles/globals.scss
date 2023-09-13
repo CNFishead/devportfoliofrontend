@@ -3,3 +3,22 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+$mobile-width: 768px;
+$tablet-width: 1250px;
+
+@mixin mobile {
+  @media (max-width:#{$mobile-width}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width:#{$tablet-width}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width:#{$mobile-width}) {
+    @content;
+  }
+}

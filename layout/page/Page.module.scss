@@ -13,6 +13,10 @@
     border-radius: 20px;
     padding: 3%;
     width: 50%;
+    // mobile hide\
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   .childrenContainer {
     display: flex;
