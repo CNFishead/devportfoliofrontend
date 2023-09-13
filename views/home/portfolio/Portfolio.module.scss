@@ -1,6 +1,5 @@
 @import '@/styles/globals.scss';
 .container {
-  
   .sectionHeader {
     .sectionTitle {
       .textFlair {
@@ -26,31 +25,19 @@
     position: relative;
     height: 100%;
 
-    @include tablet {
-      flex-direction: column;
-      gap:150px;
-    }
     .projectCard {
       height: 100%;
-      border-bottom: 1px solid var(--primary);
-      border-radius: 20px;
-      color: var(--quaternary);
-      display: flex;
+      width: 100%;
+    //   border-bottom: 1px solid var(--primary);
+    //   border-radius: 20px;
+    //   color: var(--quaternary);
+    //   display: flex;
       position: relative;
-      transition: 1s ease-in-out;
-      &:hover {
-        border-bottom: 1px solid var(--tertiary);
-      }
-      .projectImageContainer {
-        position: relative;
-        width: 60%;
-        .projectImage {
-          border-radius: 20px;
-          max-height: 400px;
-          // blur the image
-          filter: blur(1px);
-        }
-      }
+    //   transition: 1s ease-in-out;
+    //   &:hover {
+    //     border-bottom: 1px solid var(--tertiary);
+    //   }
+
       .projectTechStack {
         // place in the bottom left corner
         position: absolute;
@@ -76,7 +63,7 @@
       }
       .projectInfo {
         position: absolute;
-        // padding: 4%;
+        padding: 4%;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -92,7 +79,7 @@
           position: relative;
           // width: 80%;
           max-width: 80%;
-          z-index: 2;
+          // z-index: 2;
           border: 1px solid hsla(0, 0%, 96%, 0.113);
           background-color: rgba(0, 0, 0, 0.554);
           -webkit-backdrop-filter: blur(10px);
@@ -136,30 +123,106 @@
         }
       }
     }
-    .projectCard:nth-child(odd) {
-      flex-direction: row-reverse;
-      
-      .projectImageContainer {
-        .projectImage {
+    // .projectCard:nth-child(odd) {
+    //   flex-direction: row-reverse;
+
+    //   .projectImageContainer {
+    //     .projectImage {
+    //     }
+    //   }
+    //   .projectInfo {
+    //     align-items: flex-start;
+    //     .projectDescription {
+    //       max-width: 100%;
+    //     }
+    //     .projectLinks {
+    //       justify-content: flex-start;
+    //     }
+    //   }
+    //   .projectTechStack {
+    //     left: unset;
+    //     right: 2%;
+    //     .projectTech {
+    //       margin-right: 0;
+    //       margin-left: 10px;
+    //     }
+    //   }
+    // }
+  }
+}
+
+// mobile friendliness stuff
+@include tablet {
+}
+
+@include mobile {
+  .container {
+    .projectContainer {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .projectCard {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+        background-color: rgba(0, 0, 0, 0.75);
+        border-radius: 20px;
+        .projectTechStack{
+          position: relative;
+          width: 100%;
+          padding: 3%;
+          display: flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+
+          .projectTech{
+            margin: 1% 0;
+          }
         }
-      }
-      .projectInfo {
-        align-items: flex-start;
-        .projectDescription {
-          max-width: 100%;
-        }
-        .projectLinks {
-          justify-content: flex-start;
-        }
-      }
-      .projectTechStack {
-        left: unset;
-        right: 2%;
-        .projectTech {
-          margin-right: 0;
-          margin-left: 10px;
+        .projectInfo {
+          height: auto;
+          position: relative;
+          // background-color: red;
+          align-items: flex-start;
+          .projectDescription {
+            font-size: 14px;
+            width: 100%;
+            max-width: 100%;
+          }
         }
       }
     }
+
+    // .projectCard:nth-child(odd) {
+    //   flex-direction: column;
+    //   .projectImageContainer {
+    //     .projectImage {
+    //       max-height: 300px;
+    //     }
+    //   }
+    //   .projectInfo {
+    //     align-items: flex-start;
+    //     .projectDescription {
+    //       max-width: 100%;
+    //     }
+    //     .projectLinks {
+    //       justify-content: flex-start;
+    //     }
+    //   }
+    //   .projectTechStack {
+    //     left: unset;
+    //     right: 2%;
+    //     .projectTech {
+    //       margin-right: 0;
+    //       margin-left: 10px;
+    //     }
+    //   }
+    // }
   }
 }

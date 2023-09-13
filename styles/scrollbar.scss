@@ -1,0 +1,42 @@
+@import './globals.scss';
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease-in-out;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-color: transparent transparent #9b6a2f transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  border-color: transparent transparent white transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-color: #9b6a2f transparent transparent transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+  border-color: white transparent transparent transparent;
+}
+::-webkit-scrollbar-thumb {
+  border: 1px solid rgba(0, 0, 0, 0.017);
+  background-color: rgba(215, 215, 215, 0.37);
+
+  border-radius: 12px 12px 12px 12px;
+  margin: 0px auto;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+::-webkit-scrollbar-thumb:active {
+  background: var(--primary-light);
+}
+
+@include tablet {
+  // hide the scrollbar on tablet and mobile
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}

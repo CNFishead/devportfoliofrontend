@@ -3,7 +3,7 @@ export default [
     id: 1,
     name: 'Truthcasting',
     photo:
-      'http://wulfdevpage.azurewebsites.net/images/screenshot-2023-05-07-215800-photo.png',
+    "https://ethancannelongo.com/img/truthcastingstream.png",
     description:
       "development of the platform's API and directed the team responsible for the frontend. I helped to clear a path for many new features and integrations, ensuring that Truthcasting remained a leading provider of live streaming and on-demand video content for churches and ministries.",
     languages: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],

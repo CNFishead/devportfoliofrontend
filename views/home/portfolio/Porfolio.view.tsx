@@ -14,21 +14,18 @@ const Portfolio = () => {
       </div>
       <div className={styles.projectContainer}>
         {projectData.map((project) => (
-          <div className={styles.projectCard} key={project.id}>
-            <div className={styles.projectImageContainer}>
-              <Image
-                className={styles.projectImage}
-                src={project.photo}
-                alt={project.title}
-                preview={false}
-              />
-            </div>
+          <div
+            style={{ backgroundImage: `url("${project.photo}")` }}
+            className={styles.projectCard}
+            key={project.id}
+          >
             <div className={styles.projectInfo}>
               <h2 className={styles.projectTitle}>{project.name}</h2>
               <p className={styles.projectDescription}>
                 {project.description.length > 300
                   ? project.description.substring(0, 300) + '...'
-                  : project.description}</p>
+                  : project.description}
+              </p>
               <div className={styles.projectLinks}>
                 {project.liveProjectUrl && (
                   <Button
@@ -38,18 +35,18 @@ const Portfolio = () => {
                     rel="noopener noreferrer"
                     className={styles.projectLink}
                   >
-                    See Live <FaExternalLinkAlt className={styles.icon}/>
+                    See Live <FaExternalLinkAlt className={styles.icon} />
                   </Button>
                 )}
                 {project.githubUrl && (
-                    <Button
+                  <Button
                     type="primary"
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.projectLink}
                   >
-                    See Repository <FaExternalLinkAlt className={styles.icon}/>
+                    See Repository <FaExternalLinkAlt className={styles.icon} />
                   </Button>
                 )}
               </div>
