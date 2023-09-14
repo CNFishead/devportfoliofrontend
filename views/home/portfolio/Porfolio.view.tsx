@@ -3,8 +3,10 @@ import styles from './Portfolio.module.scss';
 import projectData from '@/data/projectData.js';
 import { Button, Image } from 'antd';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { useMediaQuery } from 'react-responsive';
 
 const Portfolio = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   return (
     <div className={styles.container}>
       <div className={styles.sectionHeader}>
@@ -15,10 +17,20 @@ const Portfolio = () => {
       <div className={styles.projectContainer}>
         {projectData.map((project) => (
           <div
-            style={{ backgroundImage: `url("${project.photo}")` }}
+            style={{ backgroundImage: `url("${isMobile ? project.photo : ""}")` }}
             className={styles.projectCard}
             key={project.id}
           >
+            {!isMobile && (
+              <div className={styles.projectImageContainer}>
+                <Image
+                  className={styles.projectImage}
+                  src={project.photo}
+                  alt={project.title}
+                  preview={false}
+                />
+              </div>
+            )}
             <div className={styles.projectInfo}>
               <h2 className={styles.projectTitle}>{project.name}</h2>
               <p className={styles.projectDescription}>

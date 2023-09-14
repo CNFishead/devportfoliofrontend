@@ -3,8 +3,10 @@ import styles from './Blog.module.scss';
 import blogData from '@/data/blogData.js';
 import { Button, Image } from 'antd';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { useMediaQuery } from 'react-responsive';
 
 const Blog = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   return (
     <div className={styles.container}>
       <div className={styles.sectionHeader}>
@@ -14,15 +16,23 @@ const Blog = () => {
       </div>
       <div className={styles.projectContainer}>
         {blogData.map((blog) => (
-          <div className={styles.projectCard} key={blog.id}>
-            <div className={styles.projectImageContainer}>
-              <Image
-                className={styles.projectImage}
-                src={blog.blogImageUrl}
-                alt={blog.blogTitle}
-                preview={false}
-              />
-            </div>
+          <div
+            className={styles.projectCard}
+            key={blog.id}
+            style={{
+              backgroundImage: `url("${blog.blogImageUrl}")`,
+            }}
+          >
+            {!isMobile && (
+              <div className={styles.projectImageContainer}>
+                <Image
+                  className={styles.projectImage}
+                  src={blog.blogImageUrl}
+                  alt={blog.blogTitle}
+                  preview={false}
+                />
+              </div>
+            )}
             <div className={styles.projectInfo}>
               <h2 className={styles.projectTitle}>{blog.blogTitle}</h2>
               <p className={styles.projectDescription}>
