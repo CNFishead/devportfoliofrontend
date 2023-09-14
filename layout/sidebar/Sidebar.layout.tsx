@@ -37,7 +37,7 @@ const Sidebar = (props: SidebarProps) => {
           ))}
         </div>
         <div className={styles.actionContainer}>
-          <Button type="primary" className={styles.actionButton}>
+          <Button type="primary" href='#contact'className={styles.actionButton}>
             <CiMail className={styles.icon}/><h3>Message Me</h3>
           </Button>
         </div>

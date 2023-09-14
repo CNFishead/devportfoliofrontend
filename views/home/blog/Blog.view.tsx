@@ -1,12 +1,27 @@
 import React from 'react';
 import styles from './Blog.module.scss';
-import blogData from '@/data/blogData.js';
-import { Button, Image } from 'antd';
+import { Button, Image, Empty } from 'antd';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
+import Error from '@/components/error/Error.component';
+import Loader from '@/components/loader/Loader.component';
+import useGetBlogData from '@/state/actions/blog/useGetBlogData';
 
 const Blog = () => {
+  const { data: blogData, isLoading, isError, error } = useGetBlogData();
+
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (isError) {
+    return <Error error={error} />;
+  }
+  if (!blogData || blogData?.length === 0) {
+    return <Empty />;
+  }
   return (
     <div className={styles.container}>
       <div className={styles.sectionHeader}>
@@ -15,7 +30,7 @@ const Blog = () => {
         </h1>
       </div>
       <div className={styles.projectContainer}>
-        {blogData.map((blog) => (
+        {blogData?.map((blog) => (
           <div
             className={styles.projectCard}
             key={blog.id}

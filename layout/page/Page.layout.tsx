@@ -23,7 +23,8 @@ const Page = (props: PageProps) => {
         <div className={styles.navigationPaneContainer}>
           <NavigationPane />
         </div>
-        {/*  */}
+        {/* create a side bar thats hidden offscreen visible on mobile */}
+        
       </div>
     </>
   );

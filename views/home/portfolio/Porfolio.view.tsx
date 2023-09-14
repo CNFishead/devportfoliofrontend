@@ -1,12 +1,35 @@
 import React from 'react';
 import styles from './Portfolio.module.scss';
-import projectData from '@/data/projectData.js';
+// import projectData from '@/data/projectData.js';
 import { Button, Image } from 'antd';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
+import useGetFeaturedProjects from '@/state/actions/portfolio/useGetFeaturedProjects';
+import Loader from '@/components/loader/Loader.component';
+import { Empty } from 'antd';
+import Error from '@/components/error/Error.component';
 
 const Portfolio = () => {
+  const {
+    data: projectData,
+    isLoading,
+    isError,
+    error,
+  } = useGetFeaturedProjects();
+
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (isError) {
+    return <Error error={error} />
+  }
+  if (!projectData || projectData?.length === 0) {
+    return <Empty />;
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.sectionHeader}>
@@ -15,9 +38,11 @@ const Portfolio = () => {
         </h1>
       </div>
       <div className={styles.projectContainer}>
-        {projectData.map((project) => (
+        {projectData?.map((project) => (
           <div
-            style={{ backgroundImage: `url("${isMobile ? project.photo : ""}")` }}
+            style={{
+              backgroundImage: `url("${isMobile ? project.photo : ''}")`,
+            }}
             className={styles.projectCard}
             key={project.id}
           >

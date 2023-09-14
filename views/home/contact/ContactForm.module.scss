@@ -1,13 +1,20 @@
-.container{
+.container {
   padding: 5%;
   background-color: rgba(var(--secondary-rgb), 0.8);
   border-radius: 20px;
+  color: var(--quaternary);
 
-
-  .buttonContainer{
-    .button{
-      
+  .buttonContainer {
+    .button {
     }
   }
 
+  label {
+    font-size: 20px;
+    font-weight: 500;
+    // target the title property and make the color white
+    &[title] {
+      color: var(--quaternary);
+    }
+  }
 }

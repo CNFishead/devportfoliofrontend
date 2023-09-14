@@ -22,7 +22,8 @@
     "react-icons": "^4.10.1",
     "react-responsive": "^9.0.2",
     "sass": "^1.66.1",
-    "socket.io-client": "^4.7.2"
+    "socket.io-client": "^4.7.2",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
     "@tanstack/react-query-devtools": "^4.33.0",

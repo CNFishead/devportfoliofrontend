@@ -1,12 +1,25 @@
 import React from 'react';
 import styles from './WorkHistory.module.scss';
-import type { DataNode } from 'antd/es/tree';
-import { Tree, Switch } from 'antd';
-import { GoDotFill } from 'react-icons/go';
-import workhistory from '@/data/workhistory.js';
 import moment from 'moment';
+import Loader from '@/components/loader/Loader.component';
+import Error from '@/components/error/Error.component';
+import { Empty } from 'antd';
+import uesGetWorkHistory from '@/state/actions/workhistory/uesGetWorkHistory';
 
 const WorkHistory = () => {
+  const { data: workhistory, isLoading, isError, error } = uesGetWorkHistory();
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (isError) {
+    return <Error error={error} />;
+  }
+  if (!workhistory || workhistory?.length === 0) {
+    return <Empty />;
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.sectionHeader}>

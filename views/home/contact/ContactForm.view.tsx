@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './ContactForm.module.scss';
 import { Form, Input, Row, Col, Button } from 'antd';
+import useContactForm from '@/state/actions/contact/useContactForm';
 
 const ContactForm = () => {
   const [form] = Form.useForm();
+  const { mutate: sendEmail, isLoading, isError, error } = useContactForm();
   return (
     <div className={styles.container}>
       <Form
@@ -11,6 +13,10 @@ const ContactForm = () => {
         name="contact"
         layout="vertical"
         initialValues={{ remember: true }}
+        onFinish={(values) => {
+          sendEmail(values);
+          form.resetFields();
+        }}
       >
         <Row justify={'space-evenly'} gutter={20}>
           <Col span={12}>
@@ -19,7 +25,7 @@ const ContactForm = () => {
               name="name"
               rules={[{ required: true, message: 'Please enter your name' }]}
             >
-              <Input />
+              <Input disabled={isLoading} />
             </Form.Item>
           </Col>
           <Col span={12}>
@@ -28,7 +34,7 @@ const ContactForm = () => {
               name="email"
               rules={[{ required: true, message: 'Please enter your email' }]}
             >
-              <Input />
+              <Input disabled={isLoading} />
             </Form.Item>
           </Col>
           <Col span={24}>
@@ -37,15 +43,20 @@ const ContactForm = () => {
               name="message"
               rules={[{ required: true, message: 'Please enter your message' }]}
             >
-              <Input.TextArea />
+              <Input.TextArea rows={4} disabled={isLoading} />
             </Form.Item>
           </Col>
         </Row>
         <Row justify={'center'}>
           {/* <Col span={24}> */}
-            <Button type="primary" className={styles.button}>
-              Submit
-            </Button>
+          <Button
+            loading={isLoading}
+            type="primary"
+            className={styles.button}
+            htmlType="submit"
+          >
+            Submit
+          </Button>
           {/* </Col> */}
         </Row>
       </Form>
