@@ -24,7 +24,7 @@ const Portfolio = () => {
   }
 
   if (isError) {
-    return <Error error={error} />
+    return <Error error={error} />;
   }
   if (!projectData || projectData?.length === 0) {
     return <Empty />;
@@ -38,7 +38,7 @@ const Portfolio = () => {
         </h1>
       </div>
       <div className={styles.projectContainer}>
-        {projectData?.map((project) => (
+        {projectData?.projects?.map((project) => (
           <div
             style={{
               backgroundImage: `url("${isMobile ? project.photo : ''}")`,
