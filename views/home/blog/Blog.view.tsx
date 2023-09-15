@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from './Blog.module.scss';
-import { Button, Image, Empty } from 'antd';
+import { Button, Image, Empty, Row } from 'antd';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
 import Error from '@/components/error/Error.component';
 import Loader from '@/components/loader/Loader.component';
 import useGetBlogData from '@/state/actions/blog/useGetBlogData';
 import BlogItem from '@/components/blogItem/BlogItem.component';
+import Link from 'next/link';
 
 const Blog = () => {
   const {
@@ -43,7 +44,12 @@ const Blog = () => {
         {blogData?.blogs?.map((blog) => (
           <BlogItem key={blog._id} blog={blog} />
         ))}
-      </div>
+      </div>{' '}
+      <Row justify={'end'}>
+        <Button type="primary">
+          <Link href="/blogs">See All Featured Projects</Link>
+        </Button>
+      </Row>
     </div>
   );
 };

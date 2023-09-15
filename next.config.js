@@ -4,8 +4,8 @@ const nextConfig = {
   swcMinify: true,
 
   env: {
-    // ENV: 'production',
-    ENV: 'development',
+    ENV: 'production',
+    // ENV: 'development',
     // API_URL: 'https://api.howardapi.com/api/v1',
     API_URL: 'https://austinhowardapi.azurewebsites.net/api/v1',
   }

@@ -5,6 +5,7 @@ import Loader from '@/components/loader/Loader.component';
 import Error from '@/components/error/Error.component';
 import { Empty } from 'antd';
 import uesGetWorkHistory from '@/state/actions/workhistory/uesGetWorkHistory';
+import WorkExperienceType from '@/types/WorkExperienceType';
 
 const WorkHistory = () => {
   const { data: workhistory, isLoading, isError, error } = uesGetWorkHistory();
@@ -28,20 +29,22 @@ const WorkHistory = () => {
         </h1>
       </div>
       <div className={styles.sectionBody}>
-        {workhistory?.map((history, index) => {
+        {workhistory?.data?.map((history: WorkExperienceType, index) => {
           return (
-            <div key={history.id} className={styles.historyContainer}>
+            <div key={history._id} className={styles.historyContainer}>
               <div className={styles.historyItem}>
                 <h3>
-                  {history.jobTitle} @ {history.company}
+                  {history.jobTitle} @ {history.name}
                 </h3>
                 <p className={styles.dates}>
                   {moment(history.startDate).format('MM/DD/YYYY')} -{' '}
-                  {history?.endDate ? history.endDate : 'Present'}
+                  {history?.endDate
+                    ? moment(history.endDate).format('MM/DD/YYYY')
+                    : 'Present'}
                 </p>
 
                 <ul>
-                  {history.points.map((point, index) => {
+                  {history.jobDescription.map((point, index) => {
                     return (
                       <li key={index} className={styles.point}>
                         <span className={styles.pointText}>{point}</span>

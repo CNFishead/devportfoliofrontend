@@ -6,6 +6,7 @@ import { useSearchStore } from '../../search/search';
 export const fetchWorkHistory = async (options?: {
   defaultKeyword?: string;
   defaultPageNumber?: number;
+  defaultPageLimit?: number;
   defaultFilter?: string;
   defaultSort?: string;
 }) => {
@@ -13,14 +14,14 @@ export const fetchWorkHistory = async (options?: {
     options?.defaultKeyword || useSearchStore.getState().search.toLowerCase();
   const pageNumber =
     options?.defaultPageNumber || useSearchStore.getState().pageNumber;
-  const pageLimit = useSearchStore.getState().pageLimit;
+  const pageLimit = options?.defaultPageLimit || useSearchStore.getState().pageLimit;
   const filter = options?.defaultFilter || useSearchStore.getState().filter;
   const sort = options?.defaultSort || useSearchStore.getState().sort;
   const setNumberPages = useSearchStore.getState().setNumberPages;
   // console.log(filter);
 
   const { data } = await axios.get(
-    `/work?keyword=${keyword}&pageNumber=${pageNumber}&limit=${pageLimit}&filterOptions=${filter}&sortBy=${sort}`
+    `/experience?keyword=${keyword}&pageNumber=${pageNumber}&limit=${pageLimit}&filterOptions=${filter}&sortBy=${sort}`
   );
 
   // data should contain a property pages, which is the number of pages, which we can pass to zustand's setNumberPages

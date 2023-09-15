@@ -1,3 +1,5 @@
+@import '@/styles/globals.scss';
+
 .container {
   position: relative;
   scroll-behavior: smooth;
@@ -25,6 +27,10 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     width: 74%;
+
+    @include tablet {
+      width: 100%;
+    }
     .children {
       width: 100%;
       display: flex;
