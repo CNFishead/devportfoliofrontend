@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './NavigationPane.module.scss';
 import pages from '@/data/pages';
 import { Tooltip } from 'antd';
+import Link from 'next/link';
 
 interface NavigationPaneProps {}
 
@@ -16,7 +17,7 @@ const NavigationPane = (props: NavigationPaneProps) => {
       {pages.map((page) => (
         <Tooltip key={page.title} title={page.title} placement="left">
           <div className={styles.navigationItem}>
-            <a href={page.url}>{page.icon}</a>
+            <Link href={page.url}>{page.icon}</Link>
           </div>
         </Tooltip>
       ))}

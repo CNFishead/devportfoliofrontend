@@ -6,6 +6,7 @@ import { useSearchStore } from '../../search/search';
 export const fetchBlogs = async (options?: {
   defaultKeyword?: string;
   defaultPageNumber?: number;
+  defaultPageLimit?: number;
   defaultFilter?: string;
   defaultSort?: string;
 }) => {
@@ -13,7 +14,8 @@ export const fetchBlogs = async (options?: {
     options?.defaultKeyword || useSearchStore.getState().search.toLowerCase();
   const pageNumber =
     options?.defaultPageNumber || useSearchStore.getState().pageNumber;
-  const pageLimit = useSearchStore.getState().pageLimit;
+  const pageLimit =
+    options?.defaultPageLimit || useSearchStore.getState().pageLimit;
   const filter = options?.defaultFilter || useSearchStore.getState().filter;
   const sort = options?.defaultSort || useSearchStore.getState().sort;
   const setNumberPages = useSearchStore.getState().setNumberPages;
@@ -43,6 +45,7 @@ export const fetchBlogs = async (options?: {
 export default (options?: {
   keyword?: string;
   pageNumber?: number;
+  pageLimit?: number;
   filter?: string;
   sort?: string;
   // onSuccess is a callback function that will be called on success, to do something with the data
@@ -55,6 +58,7 @@ export default (options?: {
       fetchBlogs({
         defaultFilter: options?.filter,
         defaultKeyword: options?.keyword,
+        defaultPageLimit: options?.pageLimit,
         defaultPageNumber: options?.pageNumber,
         defaultSort: options?.sort,
       }),

@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
   height: 100vh;
   padding: 3%;
   display: flex;
@@ -12,7 +12,7 @@
     border: 1px solid var(--quaternary);
     border-radius: 20px;
     padding: 3%;
-    width: 50%;
+    width: 25%;
     // mobile hide\
     @media (max-width: 768px) {
       display: none;
@@ -23,7 +23,8 @@
     flex-direction: column;
     overflow: hidden;
     overflow-y: scroll;
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
+    width: 74%;
     .children {
       width: 100%;
       display: flex;
@@ -52,7 +53,7 @@
   }
 }
 
-.navigationPaneContainer{
+.navigationPaneContainer {
   height: 100%;
   display: flex;
   align-items: center;

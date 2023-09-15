@@ -8,22 +8,22 @@ import { IoIosMail } from 'react-icons/io';
 export default [
   {
     title: 'Home',
-    url: '#introduction',
+    url: '/#introduction',
     icon: <FaHome />,
   },
   {
     title: 'About',
-    url: '#about',
+    url: '/#about',
     icon: <BsPerson />,
   },
   {
     title: 'Work History',
-    url: '#work-history',
+    url: '/#work-history',
     icon: <FaBriefcase />,
   },
   {
     title: 'Portfolio',
-    url: '#portfolio',
+    url: '/#portfolio',
     icon: <BsColumnsGap />,
   },
   // {
@@ -33,12 +33,12 @@ export default [
   // },
   {
     title: 'Blog',
-    url: '#blog',
+    url: '/#blog',
     icon: <FaBlog />,
   },
 {
     title: 'Contact',
-    url: '#contact',
+    url: '/#contact',
     icon: <IoIosMail />,
 }
 ];

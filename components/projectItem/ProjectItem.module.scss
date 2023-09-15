@@ -1,0 +1,285 @@
+@import '@/styles/globals.scss';
+
+.projectContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  // height: 100%;
+
+  .projectCard {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--primary);
+    border-radius: 20px;
+    color: var(--quaternary);
+    position: relative;
+    transition: 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(var(--secondary-rgb), 0.5);
+    &:hover {
+      border-bottom: 1px solid var(--tertiary);
+    }
+    .projectImageContainer {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      .projectImage {
+        // max-width: 80%;
+        border-radius: 20px;
+        max-height: 400px;
+        height: 100%;
+        // blur the image
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
+        
+      }
+    }
+    .projectTechStack {
+      // place in the bottom left corner
+      position: absolute;
+      bottom: 2%;
+      left: 2%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .projectTech {
+        margin-right: 10px;
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        background-color: rgb(var(--tertiary-rgb), 0.5);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        font-weight: lighter;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: rgb(var(--primary-rgb), 0.8);
+          cursor: pointer;
+        }
+      }
+    }
+    .projectInfo {
+      // position: absolute;
+      padding: 4%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: end;
+      height: 100%;
+
+      // put the third child at the bottom of the container
+      :nth-child(3) {
+        margin-top: auto;
+      }
+      .projectDescription {
+        position: relative;
+        // width: 80%;
+        max-width: 80%;
+        // z-index: 2;
+        border: 1px solid hsla(0, 0%, 96%, 0.113);
+        background-color: rgba(0, 0, 0, 0.554);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        // margin: 20px 0;
+        border-radius: 30px;
+        color: #fff;
+        font-weight: lighter;
+        // left: -80px;
+        font-size: 17px;
+        transition: 0.5s ease-in-out;
+        &:hover {
+          background-color: rgba(var(--primary-rgb), 0.754);
+        }
+      }
+      .projectLinks {
+        // put the links at the bottom of the container
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding: 2%;
+        width: 100%;
+        .projectLink {
+          font-size: 16px;
+          border-radius: 10px;
+          background-color: rgb(var(--primary-rgb), 0.5);
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          color: #fff;
+          font-weight: lighter;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background-color: rgb(var(--secondary-rgb), 0.8);
+          }
+
+          .icon {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+  
+}
+.projectContainer:nth-child(odd) {
+  flex-direction: column;
+  .projectImageContainer {
+    justify-content: flex-end;
+    .projectImage {
+    }
+  }
+  .projectInfo {
+    align-items: flex-start;
+    .projectDescription {
+      text-align: left;
+      max-width: 100%;
+    }
+    .projectLinks {
+      justify-content: flex-end;
+    }
+  }
+}
+
+// mobile friendliness stuff
+@include tablet {
+  .container {
+    .projectContainer {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .projectCard {
+        display: flex;
+        flex-direction: column;
+        .projectTechStack {
+          position: relative;
+          width: 100%;
+          padding: 3%;
+          display: flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+
+          .projectTech {
+            margin: 1% 0;
+          }
+        }
+        .projectInfo {
+          height: auto;
+          position: relative;
+          // background-color: red;
+          align-items: flex-start;
+          .projectDescription {
+            font-size: 14px;
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    .projectCard:nth-child(odd) {
+      flex-direction: column;
+      .projectImageContainer {
+        .projectImage {
+          max-height: 300px;
+        }
+      }
+      .projectInfo {
+        align-items: flex-start;
+        .projectDescription {
+          max-width: 100%;
+        }
+        .projectLinks {
+          justify-content: flex-start;
+        }
+      }
+      .projectTechStack {
+        left: unset;
+        right: 2%;
+        .projectTech {
+          margin-right: 0;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .container {
+    .projectContainer {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .projectCard {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-blend-mode: multiply;
+        background-color: rgba(0, 0, 0, 0.75);
+        .projectTechStack {
+          position: relative;
+          width: 100%;
+          padding: 3%;
+          display: flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+
+          .projectTech {
+            margin: 1% 0;
+          }
+        }
+        .projectInfo {
+          height: auto;
+          position: relative;
+          // background-color: red;
+          align-items: flex-start;
+          .projectDescription {
+            font-size: 14px;
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    .projectCard:nth-child(odd) {
+      flex-direction: column;
+      .projectImageContainer {
+        .projectImage {
+          max-height: 300px;
+        }
+      }
+      .projectInfo {
+        align-items: flex-start;
+        .projectDescription {
+          max-width: 100%;
+        }
+        .projectLinks {
+          justify-content: flex-start;
+        }
+      }
+      .projectTechStack {
+        left: unset;
+        right: 2%;
+        .projectTech {
+          margin-right: 0;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
