@@ -8,7 +8,9 @@ import uesGetWorkHistory from '@/state/actions/workhistory/uesGetWorkHistory';
 import WorkExperienceType from '@/types/WorkExperienceType';
 
 const WorkHistory = () => {
-  const { data: workhistory, isLoading, isError, error } = uesGetWorkHistory();
+  const { data: workhistory, isLoading, isError, error } = uesGetWorkHistory({
+    filter: 'isHidden;false'
+  });
 
   if (isLoading) {
     return <Loader />;
