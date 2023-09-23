@@ -1,0 +1,16 @@
+import { message } from 'antd';
+
+/**
+ * @description - This function is used to handle errors in the client application.
+ *
+ * @param {Error} error - The error object
+ * @Author - Austin Howard
+ * @lastModified - 2022-07-22
+ * @modifiedBy - Austin Howard
+ * @version - 1.0.0
+ */
+export default (error) => {
+  const messageTxt = error?.response?.data?.message || error.message;
+  message.error(messageTxt, 8);
+  return message;
+};

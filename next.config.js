@@ -7,8 +7,8 @@ const nextConfig = {
     ENV: 'production',
     // ENV: 'development',
     // API_URL: 'https://api.howardapi.com/api/v1',
-    API_URL: 'https://austinhowardapi.azurewebsites.net/api/v1',
-  }
-}
+    API_URL: 'https://api.austinhoward.dev/api/v1',
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

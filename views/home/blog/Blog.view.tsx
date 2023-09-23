@@ -18,7 +18,7 @@ const Blog = () => {
   } = useGetBlogData({
     pageLimit: 2,
     sort: 'createdAt;-1',
-    filter: 'isFeatured;true',
+    filter: 'isFeatured;true,isPrivate;false',
   });
 
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
@@ -30,7 +30,7 @@ const Blog = () => {
   if (isError) {
     return <Error error={error} />;
   }
-  if (!blogData || blogData?.length === 0) {
+  if (!blogData || blogData?.blogs?.length === 0) {
     return <Empty />;
   }
   return (

@@ -1,25 +1,28 @@
 import axios from '@/utils/axios';
-import { useMutation } from '@tanstack/react-query';
 import { message } from 'antd';
+import { useMutation } from '@tanstack/react-query';
+import errorHandler from '@/utils/errorHandler';
 
-export const postConactForm = async (data: any) => {
-  const { data: response } = await axios.post('/contact', data);
-  return response;
+/**
+ * @description Axio call to update a project
+ * @param project The project to be updated
+ * @returns The updated project
+ */
+const contactMeAction = async (formData: any) => {
+  const { data } = await axios.post(`/util/contactme`, formData);
+  return data;
 };
 
-export default (options?: {
-  // onSuccess is a callback function that will be called on success, to do something with the data
-  onSuccess?: (data: any) => void;
-  onError?: (error: any) => void;
-}) => {
-  const mutation = useMutation(postConactForm, {
-    onSuccess: (data) => {
-      message.success('Message Sent! looking forward to connecting with you!');
+/**
+ * @description react-query hook to update a project
+ */
+export default () => {
+  return useMutation((data: any) => contactMeAction(data), {
+    onSuccess: (data: any) => {
+      message.success('Message sent successfully');
     },
-    onError: (error) => {
-      message.error('Something went wrong, please try again later');
+    onError: (error: Error) => {
+      errorHandler(error);
     },
   });
-
-  return mutation;
 };

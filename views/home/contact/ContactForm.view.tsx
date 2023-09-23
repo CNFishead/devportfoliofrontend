@@ -12,10 +12,8 @@ const ContactForm = () => {
         form={form}
         name="contact"
         layout="vertical"
-        initialValues={{ remember: true }}
         onFinish={(values) => {
           sendEmail(values);
-          form.resetFields();
         }}
       >
         <Row justify={'space-evenly'} gutter={20}>
