@@ -19,7 +19,11 @@ const Portfolio = () => {
     isLoading,
     isError,
     error,
-  } = useGetFeaturedProjects({ pageLimit: 3, sort: 'createdAt;1' });
+  } = useGetFeaturedProjects({
+    pageLimit: 3,
+    sort: 'createdAt; -1',
+    filter: 'isFeatured;true',
+  });
 
   React.useEffect(() => {
     // refetch the data
