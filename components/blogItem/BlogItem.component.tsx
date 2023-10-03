@@ -39,11 +39,10 @@ const blogItem = (props: blogItemProps) => {
           <div className={styles.projectLinks}>
             <Button
               type="primary"
-              href={`/blogs/${blog.slug}`}
+              href={`https://blog.austinhoward.dev/blog/${blog.slug}`}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.projectLink}
-              disabled
             >
               Read more <FaExternalLinkAlt className={styles.icon} />
             </Button>

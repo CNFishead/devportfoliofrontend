@@ -47,7 +47,14 @@ const Blog = () => {
       </div>{' '}
       <Row justify={'end'}>
         <Button type="primary">
-          <Link href="/blogs">See All Featured Projects</Link>
+          <a
+            href="https://blog.austinhoward.dev/"
+            // open in a new tab
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            See All Blogs
+          </a>
         </Button>
       </Row>
     </div>
