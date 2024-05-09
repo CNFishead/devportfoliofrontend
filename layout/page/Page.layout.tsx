@@ -13,7 +13,7 @@ const Page = (props: PageProps) => {
     <>
       <Meta />
       <div className={styles.videoContainer}>
-        <video src="https://res.cloudinary.com/wulfdev/video/upload/v1694733088/devportfolio/video3_uiolfl.mp4" autoPlay loop muted />
+        <video src="https://res.cloudinary.com/wulfdev/video/upload/v1715257457/18324-291012885_large_sjnfy1.mp4" autoPlay loop muted />
       </div>
       <div className={styles.container}>
         <div className={styles.sidebarContainer}>
