@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 interface blogItemProps {
   blog: BlogType;
 }
-const blogItem = (props: blogItemProps) => {
+const BlogItem = (props: blogItemProps) => {
   const { blog } = props;
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   return (
@@ -53,4 +53,4 @@ const blogItem = (props: blogItemProps) => {
   );
 };
 
-export default blogItem;
+export default BlogItem;
